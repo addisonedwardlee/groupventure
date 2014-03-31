@@ -1,11 +1,23 @@
 How does <div class="control-group"> work?  I don't have a class of control-group in my CSS file, but I define/use it in the leagues/edit.html file.
 
+
+
 In header.html, how does ng-class work?  Why is it highlighting the selected entry without any css?
 <li data-ng-repeat="entry in navbarEntries" data-ng-show="auth" data-ng-class="{ active: entry.isActive }">
       <a href="#{{entry.link}}">{{entry.title}}</a>
     </li>
 
+
+
+
 I'm just not understanding the input logic in playercontroller.js
 $scope.findOnePlayer = function(){
         angularFire(Players.find($routeParams.playerId), $scope, 'player')
       }
+
+
+
+
+Line 8 <data-ng-options="c.$id as c.name for c in leagues"> in fantasyteams/edit
+what is data-... and how is it used?  what is the c?
+

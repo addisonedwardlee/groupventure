@@ -17,6 +17,10 @@ app.config(['$routeProvider',
       .when('/leagues/:leagueId/edit', { templateUrl: 'views/leagues/edit.html', authRequired: true })
       .when('/players', {templateUrl: 'views/players/list.html', authRequired: true})
       .when('/players/:playerId', {templateUrl: 'views/players/view.html', authRequired: true})
+       .when('/fantasyteams', { templateUrl: 'views/fantasyteams/list.html', authRequired: true })
+      .when('/fantasyteams/create', { templateUrl: 'views/fantasyteams/edit.html', authRequired: true })
+      .when('/fantasyteams/:fantasyTeamId', { templateUrl: 'views/fantasyteams/view.html', authRequired: true })
+      .when('/fantasyteams/:fantasyTeamId/edit', { templateUrl: 'views/fantasyteams/edit.html', authRequired: true })
       .otherwise({ redirectTo: '/' });
     }])
   
