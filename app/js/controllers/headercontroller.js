@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fantasyApp.controllers.header', ['fantasyApp.services.login'])
+angular.module('socialApp.controllers.header', ['socialApp.services.login'])
   .controller('HeaderController', ['$scope', '$location', 'loginService', 'angularFire', 'FBURL', 
     function($scope, $location, loginService, angularFire, FBURL) {
 
@@ -23,8 +23,8 @@ angular.module('fantasyApp.controllers.header', ['fantasyApp.services.login'])
           "title": "Leagues",
           "link": "/leagues"
         }, {
-          "title": "Fantasy Teams",
-          "link": "/fantasyteams"
+          "title": "Social Teams",
+          "link": "/socialteams"
         }
       ];
 

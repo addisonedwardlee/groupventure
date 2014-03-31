@@ -1,0 +1,13 @@
+<div data-ng-controller="SocialTeamsController" data-ng-init="findSocialTeams()">
+  <h2>Social Teams</h2>
+  <h3>All Teams</h3>
+  <ul class="unstyled">
+    <li data-ng-repeat="socialTeam in socialTeams">
+      <a href="#/socialteams/{{ socialTeam.$id }}">{{socialTeam.name}}</a>
+      (<a href="#/socialteams/{{ socialTeam.$id }}/edit">Edit</a>)
+      (<a href="" data-ng-click="removeSocialTeam('{{ socialTeam.$id }}')" >Remove</a>)
+    </li>
+  </ul>
+  <br>
+  <a href="#/socialteams/create">Create a new social team</a>
+</div>

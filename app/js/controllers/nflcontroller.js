@@ -1,6 +1,6 @@
 'use strict';
  
-angular.module('fantasyApp.controllers.nfl', ['fantasyApp.services.nfl'])
+angular.module('socialApp.controllers.nfl', ['socialApp.services.nfl'])
   .controller('NFLController', ['$scope','$routeParams','NFL',
     function($scope, $routeParams, NFL) {
       $scope.nflteams = NFL.teams;

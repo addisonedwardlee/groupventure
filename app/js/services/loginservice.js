@@ -3,7 +3,7 @@
 
 /* Services */
 
-angular.module('fantasyApp.services.login', ['fantasyApp.services.profileCreator'])
+angular.module('socialApp.services.login', ['socialApp.services.profileCreator'])
   .factory('loginService', ['angularFireAuth', 'profileCreator', '$location', '$rootScope',
     function(angularFireAuth, profileCreator, $location, $rootScope) {
       return {

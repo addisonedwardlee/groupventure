@@ -1,14 +1,14 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-var app = angular.module('fantasyApp',
-  [ 'fantasyApp.config'
-  , 'fantasyApp.controllers.header'
-  , 'fantasyApp.controllers.signin'
-  , 'fantasyApp.controllers.signup'
-  , 'fantasyApp.controllers.nfl'
-  , 'fantasyApp.controllers.players'
-  , 'fantasyApp.controllers.leagues'
-  , 'fantasyApp.controllers.fantasyTeams'
+var app = angular.module('socialApp',
+  [ 'socialApp.config'
+  , 'socialApp.controllers.header'
+  , 'socialApp.controllers.signin'
+  , 'socialApp.controllers.signup'
+  , 'socialApp.controllers.nfl'
+  , 'socialApp.controllers.players'
+  , 'socialApp.controllers.leagues'
+  , 'socialApp.controllers.socialTeams'
   , 'firebase', 'ui.bootstrap', 'ngRoute']
   )

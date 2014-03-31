@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('fantasyApp.config', [])
+angular.module('socialApp.config', [])
 
 app.config(['$routeProvider', 
     function($routeProvider) {
@@ -17,10 +17,10 @@ app.config(['$routeProvider',
       .when('/leagues/:leagueId/edit', { templateUrl: 'views/leagues/edit.html', authRequired: true })
       .when('/players', {templateUrl: 'views/players/list.html', authRequired: true})
       .when('/players/:playerId', {templateUrl: 'views/players/view.html', authRequired: true})
-       .when('/fantasyteams', { templateUrl: 'views/fantasyteams/list.html', authRequired: true })
-      .when('/fantasyteams/create', { templateUrl: 'views/fantasyteams/edit.html', authRequired: true })
-      .when('/fantasyteams/:fantasyTeamId', { templateUrl: 'views/fantasyteams/view.html', authRequired: true })
-      .when('/fantasyteams/:fantasyTeamId/edit', { templateUrl: 'views/fantasyteams/edit.html', authRequired: true })
+       .when('/socialteams', { templateUrl: 'views/socialteams/list.html', authRequired: true })
+      .when('/socialteams/create', { templateUrl: 'views/socialteams/edit.html', authRequired: true })
+      .when('/socialteams/:socialTeamId', { templateUrl: 'views/socialteams/view.html', authRequired: true })
+      .when('/socialteams/:socialTeamId/edit', { templateUrl: 'views/socialteams/edit.html', authRequired: true })
       .otherwise({ redirectTo: '/' });
     }])
   

@@ -1,6 +1,6 @@
 'use strict';
  
-angular.module('fantasyApp.controllers.leagues', ['fantasyApp.services.leagues'])
+angular.module('socialApp.controllers.leagues', ['socialApp.services.leagues'])
   .controller('LeaguesController', ['$scope','$routeParams', '$location', 'angularFire', 'Leagues', 
     function($scope, $routeParams, $location, angularFire, Leagues) {
  

@@ -1,6 +1,6 @@
 'use strict';
  
-angular.module('fantasyApp.services.leagues', ['fantasyApp.services.firebaseRefs'])
+angular.module('socialApp.services.leagues', ['socialApp.services.firebaseRefs'])
   .factory('Leagues', ['angularFireCollection', 'FireRef',
     function(angularFireCollection, FireRef) {
       return {
@@ -14,7 +14,7 @@ angular.module('fantasyApp.services.leagues', ['fantasyApp.services.firebaseRefs
          return FireRef.leagues().push({
             name: league.name,
             commissionerId: commissioner.id,
-            fantasyTeams: []
+            socialTeams: []
           }, cb).name();
         }
       , removeLeague: function(leagueId) {

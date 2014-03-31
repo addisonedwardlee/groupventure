@@ -1,4 +1,4 @@
-angular.module('fantasyApp.services.nfl', [])
+angular.module('socialApp.services.nfl', [])
   .factory('NFL', function() {
     var NFL = {};
     NFL.teams = [

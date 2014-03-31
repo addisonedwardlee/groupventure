@@ -1,6 +1,6 @@
 'use strict';
  
-angular.module('fantasyApp.services.firebaseRefs', [])
+angular.module('socialApp.services.firebaseRefs', [])
   .factory('FireRef', ['FBURL', 'Firebase',
     function(FBURL, Firebase) {
       return {
@@ -16,8 +16,8 @@ angular.module('fantasyApp.services.firebaseRefs', [])
         return new Firebase(FBURL+'/players');
       }
       
-      , fantasyTeams: function() {
-          return new Firebase(FBURL+'/fantasyTeams');
+      , socialTeams: function() {
+          return new Firebase(FBURL+'/socialTeams');
       }
 
       }
