@@ -9,7 +9,15 @@ app.config(['$routeProvider',
       .when('/',        { templateUrl: 'views/default.html' })
       .when('/signin',  { templateUrl: 'views/users/signin.html' })
       .when('/signup',  { templateUrl: 'views/users/signup.html' })
-      .otherwise(       { redirectTo: '/' });
+      .when('/nflteams', { templateUrl: 'views/nfl/list.html', authRequired: true })
+      .when('/nflteams/:nflTeamId', { templateUrl: 'views/nfl/view.html', authRequired: true })
+      .when('/leagues', { templateUrl: 'views/leagues/list.html', authRequired: true })
+      .when('/leagues/create', { templateUrl: 'views/leagues/edit.html', authRequired: true })
+      .when('/leagues/:leagueId', { templateUrl: 'views/leagues/view.html', authRequired: true })
+      .when('/leagues/:leagueId/edit', { templateUrl: 'views/leagues/edit.html', authRequired: true })
+      .when('/players', {templateUrl: 'views/players/list.html', authRequired: true})
+      .when('/players/:playerId', {templateUrl: 'views/players/view.html', authRequired: true})
+      .otherwise({ redirectTo: '/' });
     }])
   
   // establish authentication
@@ -21,6 +29,6 @@ app.config(['$routeProvider',
 
   // your Firebase URL goes here
   // should look something like: https://blahblahblah.firebaseio.com
-  .constant('FBURL', '<<<FIREBASE_URL_GOES_HERE>>>')
+  .constant('FBURL', 'https://brilliant-fire-1683.firebaseio.com')
 
 

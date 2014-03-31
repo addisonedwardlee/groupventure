@@ -1,0 +1,36 @@
+<div data-ng-controller="PlayersController" data-ng-init="findPlayers()">
+  <ul class="navlist">
+    <li>
+      <input type="text" data-ng-model="search.name" placeholder="Player name"></li>
+    <li>
+      <select data-ng-model="strictsearch.team">
+        <option value="">All NFL teams</option>
+        <option data-ng-repeat="nflteam in nflteams" value="{{$index}}">{{nflteam.team}}</option>
+      </select>
+    </li>
+    <li>
+        <select data-ng-model="strictsearch.pos">
+          <option value="">All positions</option>
+          <option data-ng-repeat="position in positions" value="{{$index.toString()}}">{{position.abbr}}</option>
+        </select>
+    </li>
+    <li><select data-ng-model="searchsize.limit">
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        </select>
+      </li>
+  </ul>
+  <table>
+    <tr>
+      <th>Player</th>
+      <th>Position</th>
+      <th>Team</th>
+    </tr>
+    <tr data-ng-repeat="player in players | filter:search | filter:strictsearch:true | limitTo:searchsize.limit">
+      <td>{{ player.name }}<span data-ng-show="player.num"> - #{{ player.num }}</span></td>
+      <td>{{ positions[player.pos].abbr }}</td>
+      <td>{{ nflteams[player.team].abbr }}</td>
+    </tr>
+  </table>
+</div>
