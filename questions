@@ -26,3 +26,7 @@ what is data-... and how is it used?  what is the c?
 socialteams view.html
 <button ng-click="addFriend(friends[socialTeam.friendsId-1])">Add friend</button>
 the input for this function is whack
+
+
+
+In leaguescontroller, I have two watch functions that do the same thing but are split because I need to look at different variables.  This seems sloppy.  How can I refactor?

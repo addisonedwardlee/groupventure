@@ -32,8 +32,15 @@ angular.module('socialApp.controllers.socialTeams', ['socialApp.services.socialT
       }
  
       $scope.create = function() {
-        $scope.socialTeam.participants = $scope.participants;
-        console.log($scope.socialTeam);
+        var temp = [];
+        $scope.participants.forEach(function(p){
+          var tempUser = {};
+          tempUser.email = p.email;
+          tempUser.img = p.img;
+          tempUser.name = p.name;
+          temp.push(tempUser);
+        });
+        $scope.socialTeam.team = temp;
         SocialTeams.create($scope.socialTeam, $scope.auth).then(function(socialTeamId) {
           $scope.socialTeam = null;
           $location.path('/socialteams/'+socialTeamId);

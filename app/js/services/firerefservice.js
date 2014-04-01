@@ -17,7 +17,7 @@ angular.module('socialApp.services.firebaseRefs', [])
       }
       
       , socialTeams: function() {
-          return new Firebase(FBURL+'/socialTeams');
+        return new Firebase(FBURL+'/socialTeams');
       }
 
       }

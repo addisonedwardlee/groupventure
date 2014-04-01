@@ -2,7 +2,7 @@
   <h2>My Socials</h2>
   <ul class="unstyled">
     <li data-ng-repeat="socialTeam in socialTeams">
-      <a href="#/socialteams/{{ socialTeam.$id }}">{{socialTeam.name}}</a>
+      <a href="#/socialteams/{{ socialTeam.$id }}">{{socialTeam.leagueId}}</a>
       (<a href="#/socialteams/{{ socialTeam.$id }}/edit">Edit</a>)
       (<a href="" data-ng-click="removeSocialTeam('{{ socialTeam.$id }}')" >Remove</a>)
     </li>

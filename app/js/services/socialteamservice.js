@@ -12,15 +12,16 @@ angular.module('socialApp.services.socialTeams', [])
         }
       , create: function(socialTeam, owner, cb) {
           var deferred = $q.defer();
-          var name = FireRef.socialTeams().push({
+          var team = {
             leagueId: socialTeam.leagueId,
             time: socialTeam.time,
-            participants: socialTeam.participants,
+            participants: socialTeam.team,
             ownerId: owner.id
-          }, cb)
-          FireRef.leagues().child('/'+socialTeam.leagueId+'/socialTeams/'+name).set(true);
-          FireRef.users().child('/'+owner.id+'/socialTeams/'+name).set(true);
-          deferred.resolve();
+          };
+          FireRef.socialTeams().push(team, cb);
+          FireRef.leagues().child('/'+socialTeam.leagueId+'/socialTeams/').push(team);
+          FireRef.users().child('/'+owner.id+'/socialTeams/').push(team);
+          deferred.resolve(name);
           return deferred.promise;
         }
       , removeSocialTeam: function(socialTeamId) {

@@ -1,0 +1,20 @@
+<div data-ng-controller="LeaguesController" data-ng-init="findRandomLeague()">
+    <h2>{{ league.name }}</h2>
+    <img ng-src={{league.img}} />
+    <h5>{{ league.desc }}</h5>
+    <ul style="margin-left:-10px">
+      <li style="text-align:center;width:120px;display:inline-block" data-ng-repeat="participant in team.participants" list-style-type="none">
+        <h6>{{participant.name}}</h6>
+        <img ng-src="{{participant.img}}" style="height:60px; width=60px" />
+      </li>
+    </ul>
+    <button style="margin-bottom:10px" ng-click="selectTeam()">Looks good to me!</button>
+    <div>
+    <button ng-click="nextTeam()">Different group</button>
+    <button ng-click="nextLocale()">Different locale</button>
+    </div>
+    <br>
+    <br>
+    <br>
+
+</div>

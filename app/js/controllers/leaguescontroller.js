@@ -3,10 +3,21 @@
 angular.module('socialApp.controllers.leagues', ['socialApp.services.leagues'])
   .controller('LeaguesController', ['$scope','$routeParams', '$location', 'angularFire', 'Leagues', 
     function($scope, $routeParams, $location, angularFire, Leagues) {
- 
-      $scope.league = {};
+    
       $scope.leagueId = $routeParams.leagueId;
- 
+      $scope.leagueNum = 0;
+      $scope.teamNum = 0;
+
+      $scope.$watch('league', function(){
+        var teams = Object.keys($scope.league.socialTeams);
+        $scope.team = $scope.league.socialTeams[teams[$scope.teamNum]];
+      })
+
+      $scope.$watch('teamNum', function(){
+        var teams = Object.keys($scope.league.socialTeams);
+        $scope.team = $scope.league.socialTeams[teams[$scope.teamNum]];
+      })
+
       $scope.findLeagues = function() {
         $scope.leagues = Leagues.collection();
       }
@@ -15,6 +26,11 @@ angular.module('socialApp.controllers.leagues', ['socialApp.services.leagues'])
         if(!!$scope.leagueId) {
           angularFire(Leagues.find($routeParams.leagueId), $scope, 'league')
         }
+      }
+
+      $scope.findRandomLeague = function () {
+        angularFire(Leagues.find("-JJPeBNABfvylEHsi8CV"), $scope, 'league')
+        // $scope.findLeagues();
       }
  
       $scope.createLeague = function() {
@@ -30,4 +46,10 @@ angular.module('socialApp.controllers.leagues', ['socialApp.services.leagues'])
       $scope.removeLeague = function(leagueId) {
         Leagues.removeLeague(leagueId);
       }
-    }])
+
+      $scope.nextTeam = function(){
+        // var teams = Object.keys($scope.league.socialTeams);
+        // $scope.team = $scope.league.socialTeams[teams[1]];
+        $scope.teamNum = $scope.teamNum + 1
+      }
+}])
