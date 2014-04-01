@@ -28,9 +28,12 @@ angular.module('socialApp.controllers.leagues', ['socialApp.services.leagues'])
         }
       }
 
-      $scope.findRandomLeague = function () {
-        angularFire(Leagues.find("-JJPeBNABfvylEHsi8CV"), $scope, 'league')
-        // $scope.findLeagues();
+      $scope.findRandomLeague = function (num) {
+        $scope.leagues = Leagues.collection();
+        setTimeout(function(){
+          $scope.league = $scope.leagues[num];
+          $scope.$apply();
+        }, 500)
       }
  
       $scope.createLeague = function() {
@@ -48,8 +51,14 @@ angular.module('socialApp.controllers.leagues', ['socialApp.services.leagues'])
       }
 
       $scope.nextTeam = function(){
-        // var teams = Object.keys($scope.league.socialTeams);
-        // $scope.team = $scope.league.socialTeams[teams[1]];
         $scope.teamNum = $scope.teamNum + 1
       }
+
+      $scope.nextLocale = function(){
+        $scope.findRandomLeague($scope.leagueNum);
+        $scope.leagueNum = $scope.leagueNum + 1;
+        $scope.team = '';
+        $scope.teamNum = 0;
+      }
+      
 }])

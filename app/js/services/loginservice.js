@@ -10,8 +10,7 @@ angular.module('socialApp.services.login', ['socialApp.services.profileCreator']
         login: function(email, pass, redirect, callback) {
           var p = angularFireAuth.login('password', {
             email: email,
-            password: pass,
-            rememberMe: true
+            password: pass
           });
           p.then(function(user) {
             if( redirect ) {

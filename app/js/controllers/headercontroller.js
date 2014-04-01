@@ -17,14 +17,11 @@ angular.module('socialApp.controllers.header', ['socialApp.services.login'])
           "title": "See what's out there",
           "link": "/seeAll"
         }, {
-          "title": "Players",
-          "link": "/players"
-        }, {
-          "title": "Leagues",
-          "link": "/leagues"
-        }, {
-          "title": "Social Teams",
+          "title": "Create your own adventure",
           "link": "/socialteams"
+        }, {
+          "title": "Locations",
+          "link": "/leagues"
         }
       ];
 

@@ -10,6 +10,7 @@ app.config(['$routeProvider',
       .when('/signin',  { templateUrl: 'views/users/signin.html' })
       .when('/signup',  { templateUrl: 'views/users/signup.html' })
       .when('/seeAll', { templateUrl: 'views/leagues/random.html', authRequired: true })
+      .when('/seeAll/invite', { templateUrl: 'views/leagues/view.html', authRequired: true })
       .when('/leagues', { templateUrl: 'views/leagues/list.html', authRequired: true })
       .when('/leagues/create', { templateUrl: 'views/leagues/edit.html', authRequired: true })
       .when('/leagues/:leagueId', { templateUrl: 'views/leagues/view.html', authRequired: true })

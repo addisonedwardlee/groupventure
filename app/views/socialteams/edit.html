@@ -28,7 +28,7 @@
           style="width: 140px">
           <option value="">Choose a friend</option>
         </select>
-        <button ng-click="addFriend(friends[socialTeam.friendsId-1])">Add friend</button>
+        <button ng-click="addFriend(friends[socialTeam.friendsId-10])">Add friend</button>
       </div>
     </div>
     <div class="control-group">
@@ -36,7 +36,7 @@
         <ul>
           <li style="text-align:center;width:120px;display:inline-block" data-ng-repeat="participant in participants" list-style-type="none">
             <h6>{{participant.name}}</h6>
-            <img ng-src="{{participant.img}}" style="height:60px; width=60px" />
+            <img ng-src="{{participant.img}}" style="height:60px; width=60px; border-radius:15px" />
           </li>
         </ul>
       </div>
