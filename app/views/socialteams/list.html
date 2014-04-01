@@ -1,6 +1,5 @@
 <div data-ng-controller="SocialTeamsController" data-ng-init="findSocialTeams()">
-  <h2>Social Teams</h2>
-  <h3>All Teams</h3>
+  <h2>My Socials</h2>
   <ul class="unstyled">
     <li data-ng-repeat="socialTeam in socialTeams">
       <a href="#/socialteams/{{ socialTeam.$id }}">{{socialTeam.name}}</a>

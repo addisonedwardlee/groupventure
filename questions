@@ -21,3 +21,8 @@ $scope.findOnePlayer = function(){
 Line 8 <data-ng-options="c.$id as c.name for c in leagues"> in fantasyteams/edit
 what is data-... and how is it used?  what is the c?
 
+
+
+socialteams view.html
+<button ng-click="addFriend(friends[socialTeam.friendsId-1])">Add friend</button>
+the input for this function is whack

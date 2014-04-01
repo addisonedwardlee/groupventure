@@ -1,6 +1,7 @@
 <div data-ng-controller="LeaguesController" data-ng-init="findOneLeague()">
     <h2>{{ league.name }}</h2>
-    <p><strong>Commissioner: </strong>{{ league.commissionerId }}</p>
+    <h5>{{ league.desc }}</h5>
+    <img src={{league.img}} />
     <br>
     <a href="#/leagues">View all leagues</a>
 </div>

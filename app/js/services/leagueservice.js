@@ -13,7 +13,7 @@ angular.module('socialApp.services.leagues', ['socialApp.services.firebaseRefs']
       , create: function(league, commissioner, cb) {
          return FireRef.leagues().push({
             name: league.name,
-            commissionerId: commissioner.id,
+            desc: league.desc,
             socialTeams: []
           }, cb).name();
         }

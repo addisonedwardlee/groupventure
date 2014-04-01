@@ -1,21 +1,44 @@
-<div data-ng-controller="SocialTeamsController" data-ng-init="findOneSocialTeam();findLeagues()">
+<div data-ng-controller="SocialTeamsController" data-ng-init="findOneSocialTeam();findLeagues();findFriends()">
   <form class="form-horizontal">
     <div class="control-group">
-      <label class="control-label" for="name">Name</label>
-      <div class="controls">
-        <input type="text" data-ng-model="socialTeam.name" id="name" placeholder="Name">
-      </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" for="league">League</label>
+      <label class="control-label" for="league">Locale</label>
       <div class="controls">
         <select 
           data-ng-model="socialTeam.leagueId" 
           name="league" 
           required="required"
-          data-ng-options="c.$id as c.name for c in leagues">
-          <option data-ng-show="noSocialTeam" value="">Choose a league:</option>
+          data-ng-options="league.$id as league.name for league in leagues">
+          <option data-ng-show="noSocialTeam" value="">Choose a location:</option>
         </select>
+      </div>
+    </div>
+     <div class="control-group">
+      <label class="control-label" for="time">Time</label>
+      <div class="controls">
+        <input type="text" data-ng-model="socialTeam.time" id="name" placeholder="Time">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="friend">Friends</label>
+      <div class="controls">
+        <select 
+          data-ng-model="socialTeam.friendsId" 
+          name="friend" 
+          data-ng-options="friend.$id as friend.name for friend in friends"
+          style="width: 140px">
+          <option value="">Choose a friend</option>
+        </select>
+        <button ng-click="addFriend(friends[socialTeam.friendsId-1])">Add friend</button>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <ul>
+          <li style="text-align:center;width:120px;display:inline-block" data-ng-repeat="participant in participants" list-style-type="none">
+            <h6>{{participant.name}}</h6>
+            <img ng-src="{{participant.img}}" style="height:60px; width=60px" />
+          </li>
+        </ul>
       </div>
     </div>
     <div class="control-group">

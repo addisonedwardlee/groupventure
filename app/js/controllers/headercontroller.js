@@ -14,9 +14,6 @@ angular.module('socialApp.controllers.header', ['socialApp.services.login'])
 
       $scope.navbarEntries = [
         {
-          "title": "NFL Teams",
-          "link": "/nflteams"
-        }, {
           "title": "Players",
           "link": "/players"
         }, {
