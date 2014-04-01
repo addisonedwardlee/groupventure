@@ -4,8 +4,8 @@ angular.module('socialApp.services.firebaseRefs', [])
   .factory('FireRef', ['FBURL', 'Firebase',
     function(FBURL, Firebase) {
       return {
-        leagues: function() {
-          return new Firebase(FBURL+'/leagues');
+        locations: function() {
+          return new Firebase(FBURL+'/locations');
         }
 
       , users: function() {

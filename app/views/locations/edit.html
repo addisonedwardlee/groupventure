@@ -1,24 +1,24 @@
-<div data-ng-controller="LeaguesController" data-ng-init="findOneLeague()">
+<div data-ng-controller="LocationsController" data-ng-init="findOneLocation()">
   <form class="form-horizontal">
     <div class="control-group">
       <label class="control-label" for="name">Name</label>
       <div class="controls">
-        <input type="text" data-ng-model="league.name" id="name" placeholder="Where you going?">
+        <input type="text" data-ng-model="location.name" id="name" placeholder="Where you going?">
       </div>
       </br>
       <label class="control-label" for="desc">Short Description</label>
       <div class="controls">
-        <input type="text" data-ng-model="league.desc" id="name" placeholder="Add some info here">
+        <input type="text" data-ng-model="location.desc" id="name" placeholder="Add some info here">
       </div>
     </div>
     <div class="control-group">
       <div class="controls">
-        <button data-ng-click="createLeague()" data-ng-show="!leagueId">Create League</button>
+        <button data-ng-click="createLocation()" data-ng-show="!locationId">Create Location</button>
       </div>
     </div>
     <div class="control-group">
       <div class="controls">
-        <a href="#/leagues">View all leagues</a>
+        <a href="#/locations">View all locations</a>
       </div>
     </div>
   </form>

@@ -1,16 +1,14 @@
-<div data-ng-controller="LeaguesController" data-ng-init="nextLocale()">
-    <h2>{{ league.name }}</h2>
-    <img ng-src={{league.img}} />
-    <h5>{{ league.desc }}</h5>
+<div data-ng-controller="LocationsController" data-ng-init="nextLocale()">
+    <h2>{{ location.name }}</h2>
+    <img ng-src={{location.img}} />
+    <h5>{{ location.desc }}</h5>
     <ul style="margin-left:-10px">
       <li style="text-align:center;width:120px;display:inline-block" data-ng-repeat="participant in team.participants" list-style-type="none">
         <h6>{{participant.name}}</h6>
         <img ng-src="{{participant.img}}" style="height:60px; width=60px; border-radius:15px" />
       </li>
     </ul>
-    <form action="#/seeAll/invite">
-        <input type="submit" value="They look fun!">
-    </form>
+    <a href="#/seeAll/invite">They look fun!</a>
     <div>
     <button ng-click="nextTeam()">Different group</button>
     <button ng-click="nextLocale()">Different locale</button>

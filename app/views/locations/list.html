@@ -1,0 +1,13 @@
+ <div data-ng-controller="LocationsController" data-ng-init="findLocations()">
+  <h2>Locations</h2>
+  <h3>All Locations</h3>
+  <ul class="unstyled">
+    <li data-ng-repeat="location in locations">
+      <a href="#/locations/{{ location.$id }}">{{location.name}}</a>
+      (<a href="#/locations/{{ location.$id }}/edit">Edit</a>)
+      (<a href="" data-ng-click="removeLocation('{{ location.$id }}')" >Remove</a>)
+    </li>
+  </ul> 
+  <br>
+  <a href="#/locations/create">Create a new location</a>
+  </div>

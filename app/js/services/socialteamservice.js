@@ -13,13 +13,13 @@ angular.module('socialApp.services.socialTeams', [])
       , create: function(socialTeam, owner, cb) {
           var deferred = $q.defer();
           var team = {
-            leagueId: socialTeam.leagueId,
+            locationId: socialTeam.locationId,
             time: socialTeam.time,
             participants: socialTeam.team,
             ownerId: owner.id
           };
           FireRef.socialTeams().push(team, cb);
-          FireRef.leagues().child('/'+socialTeam.leagueId+'/socialTeams/').push(team);
+          FireRef.locations().child('/'+socialTeam.locationId+'/socialTeams/').push(team);
           FireRef.users().child('/'+owner.id+'/socialTeams/').push(team);
           deferred.resolve(name);
           return deferred.promise;
@@ -27,7 +27,7 @@ angular.module('socialApp.services.socialTeams', [])
       , removeSocialTeam: function(socialTeamId) {
           var socialTeam = this.find(socialTeamId);
           socialTeam.once('value',function(data) {
-            FireRef.leagues().child('/'+data.val().leagueId).child('/socialTeams/'+socialTeamId).remove();
+            FireRef.locations().child('/'+data.val().locationId).child('/socialTeams/'+socialTeamId).remove();
             FireRef.users().child('/'+data.val().ownerId).child('/socialTeams/'+socialTeamId).remove();
           })
           socialTeam.remove();

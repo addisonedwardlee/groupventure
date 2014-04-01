@@ -1,8 +1,8 @@
 'use strict';
  
 angular.module('socialApp.controllers.socialTeams', ['socialApp.services.socialTeams', 'socialApp.services.friends'])
-  .controller('SocialTeamsController', ['$scope','$routeParams', '$location', 'angularFire', 'Leagues', 'SocialTeams', 'Friends', 'FireRef',
-    function($scope, $routeParams, $location, angularFire, Leagues, SocialTeams, Friends, FireRef) {
+  .controller('SocialTeamsController', ['$scope','$routeParams', '$location', 'angularFire', 'Locations', 'SocialTeams', 'Friends', 'FireRef',
+    function($scope, $routeParams, $location, angularFire, Locations, SocialTeams, Friends, FireRef) {
  
       $scope.socialTeamId = $routeParams.socialTeamId;
       $scope.noSocialTeam = !$routeParams.socialTeamId;
@@ -18,8 +18,8 @@ angular.module('socialApp.controllers.socialTeams', ['socialApp.services.socialT
         }
       }
  
-      $scope.findLeagues = function () {
-        $scope.leagues = Leagues.collection();
+      $scope.findLocations = function () {
+        $scope.locations = Locations.collection();
       }
 
       $scope.findFriends = function () {

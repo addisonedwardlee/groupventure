@@ -21,7 +21,7 @@ angular.module('socialApp.controllers.header', ['socialApp.services.login'])
           "link": "/socialteams"
         }, {
           "title": "Locations",
-          "link": "/leagues"
+          "link": "/locations"
         }
       ];
 

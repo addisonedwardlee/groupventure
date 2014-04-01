@@ -1,13 +1,13 @@
-<div data-ng-controller="SocialTeamsController" data-ng-init="findOneSocialTeam();findLeagues();findFriends()">
+<div data-ng-controller="SocialTeamsController" data-ng-init="findOneSocialTeam();findLocations();findFriends()">
   <form class="form-horizontal">
     <div class="control-group">
-      <label class="control-label" for="league">Locale</label>
+      <label class="control-label" for="location">Locale</label>
       <div class="controls">
         <select 
-          data-ng-model="socialTeam.leagueId" 
-          name="league" 
+          data-ng-model="socialTeam.locationId" 
+          name="location" 
           required="required"
-          data-ng-options="league.$id as league.name for league in leagues">
+          data-ng-options="location.$id as location.name for location in locations">
           <option data-ng-show="noSocialTeam" value="">Choose a location:</option>
         </select>
       </div>
