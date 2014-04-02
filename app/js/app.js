@@ -6,7 +6,6 @@ var app = angular.module('socialApp',
   , 'socialApp.controllers.header'
   , 'socialApp.controllers.signin'
   , 'socialApp.controllers.signup'
-  , 'socialApp.controllers.players'
   , 'socialApp.controllers.locations'
   , 'socialApp.controllers.socialTeams'
   , 'firebase', 'ui.bootstrap', 'ngRoute']

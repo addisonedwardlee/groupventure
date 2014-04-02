@@ -11,10 +11,6 @@ angular.module('socialApp.services.firebaseRefs', [])
       , users: function() {
           return new Firebase(FBURL+'/users');
         }
-
-      , players: function() {
-        return new Firebase(FBURL+'/players');
-      }
       
       , socialTeams: function() {
         return new Firebase(FBURL+'/socialTeams');
