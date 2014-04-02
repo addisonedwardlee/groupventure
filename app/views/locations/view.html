@@ -1,7 +1,28 @@
-<div data-ng-controller="LocationsController">
-    <h2>{{ location.name }}</h2>
-    <h5>{{ location.desc }}</h5>
-    <img src={{location.img}} />
-    <br>
-    <a href="#/locations">View all locations</a>
+<div data-ng-controller="LocationsController" ng-init="findOneInvite();findFriends()">
+  <h2>{{ location.name }}</h2>
+  <img ng-src={{location.img}} />
+  <h5>{{ location.desc }}</h5>
+  <h5>{{ invite.time }}</h5>
+  <ul style="margin-left:-10px">
+    <li style="text-align:center;width:120px;display:inline-block" data-ng-repeat="participant in team.participants" list-style-type="none">
+      <h6>{{participant.name}}</h6>
+      <img ng-src="{{participant.img}}" style="height:60px; width=60px; border-radius:15px" />
+    </li>
+  </ul>
+  <div class="control-group">
+    <label class="control-label" for="friend">Add your friends</label>
+    <div class="controls">
+      <select 
+        data-ng-model="socialTeam.friendsId" 
+        name="friend" 
+        data-ng-options="friend.$id as friend.name for friend in friends"
+        style="width: 140px">
+        <option value="">Choose a friend</option>
+      </select>
+      <button ng-click="addFriend(friends[socialTeam.friendsId-10])">Add friend</button>
+    </div>
+  </div>
+  <button ng-click="finalizeInvite()">All finished!</button>
+  <br>
+  <br>
 </div>

@@ -21,7 +21,7 @@ angular.module('socialApp.services.socialTeams', [])
           FireRef.socialTeams().push(team, cb);
           FireRef.locations().child('/'+socialTeam.locationId+'/socialTeams/').push(team);
           FireRef.users().child('/'+owner.id+'/socialTeams/').push(team);
-          deferred.resolve(name);
+          deferred.resolve();
           return deferred.promise;
         }
       , removeSocialTeam: function(socialTeamId) {

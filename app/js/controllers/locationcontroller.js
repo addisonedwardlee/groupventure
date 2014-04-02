@@ -1,8 +1,8 @@
 'use strict';
  
 angular.module('socialApp.controllers.locations', ['socialApp.services.locations'])
-  .controller('LocationsController', ['$scope','$routeParams', '$location', 'angularFire', 'Locations', 
-    function($scope, $routeParams, $location, angularFire, Locations) {
+  .controller('LocationsController', ['$scope','$routeParams', '$location', 'angularFire', 'Locations', 'Friends',
+    function($scope, $routeParams, $location, angularFire, Locations, Friends) {
     
       $scope.locationId = $routeParams.locationId;
       $scope.locationNum = 0;
@@ -61,4 +61,26 @@ angular.module('socialApp.controllers.locations', ['socialApp.services.locations
         $scope.teamNum = 0;
       }
       
+      $scope.sendInvite = function(){
+        Locations.sendInvite($scope.location, $scope.team);
+      }
+
+      $scope.findOneInvite = function(){
+        angularFire(Locations.findInvite($routeParams.locationId, $routeParams.inviteId), $scope, 'invite');
+        angularFire(Locations.find($routeParams.locationId), $scope, 'location');
+      }
+
+      $scope.findFriends = function () {
+        $scope.friends = Friends.collection();
+      }
+
+      $scope.addFriend = function(friend) {
+        $scope.team.participants.push(friend);
+        $scope.friendsId = null;
+      }
+
+      $scope.finalizeInvite = function(){
+        //create write functionality
+        Locations.finalizeInvite();
+      }
 }])

@@ -2,13 +2,14 @@
     <h2>{{ location.name }}</h2>
     <img ng-src={{location.img}} />
     <h5>{{ location.desc }}</h5>
+    <h5>{{ team.time }} Saturday</h5>
     <ul style="margin-left:-10px">
       <li style="text-align:center;width:120px;display:inline-block" data-ng-repeat="participant in team.participants" list-style-type="none">
         <h6>{{participant.name}}</h6>
         <img ng-src="{{participant.img}}" style="height:60px; width=60px; border-radius:15px" />
       </li>
     </ul>
-    <a href="#/seeAll/invite">They look fun!</a>
+    <button style="margin-bottom: 5px" ng-click="sendInvite()">Sounds good! Let's go!</button>
     <div>
     <button ng-click="nextTeam()">Different group</button>
     <button ng-click="nextLocale()">Different locale</button>
